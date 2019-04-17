@@ -1,0 +1,20 @@
+@import '../../assets/fonts/roboto';
+@import '../../assets/styles/colors/general-colors';
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: $bg_light;
+}
+.main-layout {
+  font-family: Roboto, 'sans-serif';
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding-top: 50px;
+  background-color: $bg_light;
+  &__content {
+    flex: 1 0 auto;
+  }
+}

@@ -1,0 +1,56 @@
+@import './reset';
+@import './columns';
+@import './offsets';
+@import './orders';
+@import './properties';
+
+$gutters: map_get($gutters_bp, '');
+
+.container {
+  width: 100%;
+  padding-right: $gutters;
+  padding-left: $gutters;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.no-gutters {
+  margin-left: 0;
+  margin-right: 0;
+  & > .col, & > [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$gutters;
+  margin-right: -$gutters;
+}
+
+@include columns();
+@include offsets();
+@include orders();
+@include classes();
+@include classes_adaptive();
+
+@each $bp, $min_width in $breakpoints {
+  @include media_down($min_width) {
+    $local_gutters: map_get($gutters_bp, $bp);
+    .container {
+      max-width: map_get($container_sizes, $bp);
+      padding-right: $local_gutters;
+      padding-left: $local_gutters;
+    }
+    .row {
+      margin-left: -$local_gutters;
+      margin-right: -$local_gutters;
+    }
+    @include columns($bp);
+    @include offsets($bp);
+    @include orders($bp);
+    @include classes_adaptive($bp);
+  }
+}

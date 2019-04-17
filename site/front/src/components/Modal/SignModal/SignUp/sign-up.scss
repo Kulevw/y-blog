@@ -1,0 +1,23 @@
+@import '../sign-modal-mixins';
+
+.modal-sign-up {
+  @include modal_sign;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  &__content-wrapper {
+    @include modal_sign_content_wrapper;
+  }
+
+  &__content {
+    @include modal_sign_content;
+    background: $bg_middle;
+  }
+
+  &__body {
+    @include modal_sign_body;
+  }
+
+  &__title {
+    @include modal_sign_title;
+  }
+}

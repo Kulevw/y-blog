@@ -1,0 +1,13 @@
+@import '../../../assets/styles/colors/general-colors';
+
+.validation-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+
+  &__item {
+    color: $bg_error;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}

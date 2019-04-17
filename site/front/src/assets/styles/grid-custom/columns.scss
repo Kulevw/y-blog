@@ -1,0 +1,41 @@
+@import 'params';
+
+@mixin columns($bp: '') {
+  $local_gutters: map_get($gutters_bp, $bp);
+
+  %col-std#{$bp} {
+    padding-left: $local_gutters;
+    padding-right: $local_gutters;
+  }
+
+  %col-std-width#{$bp} {
+    padding-left: $local_gutters;
+    padding-right: $local_gutters;
+    width: 100%;
+  }
+
+  .col#{$bp} {
+    @extend %col-std#{$bp};
+    flex-basis: 0;
+    flex-grow: 1;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .col#{$bp}-auto {
+    @extend %col-std#{$bp};
+
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+
+  @for $span from 1 through $columns_count {
+    .col#{$bp}-#{$span} {
+      @extend %col-std-width#{$bp};
+      $percent: ($span / $columns_count) * 100%;
+      flex: 0 0 $percent;
+      max-width: $percent;
+    }
+  }
+}

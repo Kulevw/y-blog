@@ -1,0 +1,49 @@
+@import '../../../assets/fonts/roboto';
+@import '../../../assets/styles/colors/general-colors';
+
+.input-text {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  padding-top: 20px;
+  font-size: 16px;
+
+  &__input-wrapper {
+    background-color: transparent;
+    height: 35px;
+    font-size: inherit;
+    margin-bottom: 10px;
+  }
+
+  &__placeholder {
+    pointer-events: none;
+    position: absolute;
+    margin: 0;
+    line-height: 100%;
+    left: 12px;
+    top: 30px;
+    cursor: pointer;
+    &--focus {
+      pointer-events: auto;
+      top: 2px;
+      padding-bottom: 4px;
+      left: 0;
+      font-size: 14px;
+    }
+  }
+
+  &__input {
+    font-size: inherit;
+    border: 2px solid black;
+    width: 100%;
+    background-color: transparent;
+    height: 35px;
+    display: block;
+    padding: 0 10px;
+    &--invalidate {
+      border-color: $bg_error;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

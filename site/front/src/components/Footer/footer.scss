@@ -1,0 +1,10 @@
+@import '../../assets/styles/colors/general-colors';
+
+.footer {
+  flex: 0 0 auto;
+
+  &__content {
+    height: 400px;
+    background-color: $bg_dark;
+  }
+}

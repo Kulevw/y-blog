@@ -1,0 +1,13 @@
+@mixin media_down($min_width) {
+  @media screen and (min-width: $min_width) {
+    @content;
+  }
+}
+
+@mixin class_bp_value($class, $class_value, $bp, $props) {
+  .#{$class}#{$bp}-#{$class_value} {
+    @each $prop, $value in $props {
+      #{$prop}: #{$value};
+    }
+  }
+}

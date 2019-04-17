@@ -1,0 +1,21 @@
+@import '../../assets/styles/colors/general-colors';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  &__content {
+    height: 50px;
+    background-color: $bg_middle;
+  }
+  &__title {
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

@@ -1,0 +1,9 @@
+@import 'params';
+
+@mixin offsets($bp: '') {
+  @for $span from 1 through $columns_count {
+    .offset#{$bp}-#{$span - 1} {
+      margin-left: (($span - 1) / $columns_count) * 100%;
+    }
+  }
+}

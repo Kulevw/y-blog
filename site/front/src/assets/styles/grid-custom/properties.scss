@@ -1,0 +1,18 @@
+@import './params';
+@import './general-mixins';
+
+@mixin classes() {
+  @each $class, $class_values in $classes {
+    @each $class_value, $props in $class_values {
+      @include class_bp_value($class, $class_value, '', $props);
+    }
+  }
+}
+
+@mixin classes_adaptive($bp: '') {
+  @each $class, $class_values in $classes_adaptive {
+    @each $class_value, $props in $class_values {
+      @include class_bp_value($class, $class_value, $bp, $props);
+    }
+  }
+}
